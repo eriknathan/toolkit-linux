@@ -1,6 +1,6 @@
 # Carregando lib das cores e títulos
 source libs/details.sh
-source start.sh
+source toolkit.sh
 
 TIME=1
 

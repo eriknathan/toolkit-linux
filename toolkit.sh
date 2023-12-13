@@ -7,7 +7,6 @@
 # Descrição:
 #  --------------------------------------------------------------
 #  Observações:
-#
 # ------------------------------------------------------------------------- #
 # Testado em:
 #   bash 5.1.16
@@ -16,6 +15,7 @@
 # -------------------------------- IMPORTAÇÕES -------------------------------- #
 source libs/details.sh
 source libs/atualization.sh
+source libs/dependency.sh
 source libs/_help.sh
 # ------------------------------------------------------------------------- #
 TIME=1
@@ -31,10 +31,18 @@ function toolkit_linux () {
 	clear
 	while true; do
 		_title "TOOLKIT - Linux"
+
+        # echo -e "${COR_VERDE} _____ ___   ___  _     _  _____ _____   _     ___ _   _ _   ___  __${COR_RESET}"
+        # echo -e "${COR_VERDE}|_   _/ _ \ / _ \| |   | |/ /_ _|_   _| | |   |_ _| \ | | | | \ \/ /${COR_RESET}"
+        # echo -e "${COR_VERDE}  | || | | | | | | |   | ' / | |  | |   | |    | ||  \| | | | |\  / ${COR_RESET}"
+        # echo -e "${COR_VERDE}  | || |_| | |_| | |___| . \ | |  | |   | |___ | || |\  | |_| |/  \ ${COR_RESET}"
+        # echo -e "${COR_VERDE}  |_| \___/ \___/|_____|_|\_\___| |_|   |_____|___|_| \_|\___//_/\_\${COR_RESET}"
+                                                                    
 		echo -e "${COR_VERMELHO}Scripted Developed By :${COR_RESET} ${COR_AMARELO}Erik Nathan - @erik.devops | Github: @eriknathan${COR_RESET}"
 		_line
 		# Menu de Opções
 		echo -e "${COR_VERDE}[01]${COR_RESET} ${COR_MAGENTE}>>${COR_RESET} Atualização do Sistema."
+		echo -e "${COR_VERDE}[02]${COR_RESET} ${COR_MAGENTE}>>${COR_RESET} Instalação de Dependências."
 		echo -e "${COR_VERDE}[00]${COR_RESET} ${COR_MAGENTE}>>${COR_RESET} Sair."
 		_line
 		
@@ -47,6 +55,12 @@ function toolkit_linux () {
 			sleep $TIME
 			clear
             _atualization
+            ;;
+	    02)
+            echo -e "${COR_VERDE}Atualização do Sistema.${COR_RESET}"
+			sleep $TIME
+			clear
+            _dependency
             ;;
 		00)
             echo -e "${COR_VERDE}Saindo do Sistema.${COR_RESET}"
